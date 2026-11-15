@@ -6,7 +6,7 @@ Application Next.js pour un studio de contenu avec CRM clients, profils d’infl
 
 Prérequis : Node.js 20.9 ou supérieur, un projet Supabase et npm.
 
-1. Copiez `.env.example` vers `.env.local` et renseignez `NEXT_PUBLIC_SUPABASE_URL` ainsi que `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` depuis le panneau **Connect** de Supabase. Ne mettez jamais une clé `service_role` dans une variable `NEXT_PUBLIC_*` ni dans Git.
+1. Le déploiement NEXOSI-IA inclut une URL et une clé **publishable** de Supabase comme valeurs publiques de secours, afin que Netlify démarre même si ses variables d’environnement ne sont pas encore renseignées. Pour développer avec un autre projet, copiez `.env.example` vers `.env.local` et définissez `NEXT_PUBLIC_SUPABASE_URL` ainsi que `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Ne mettez jamais de clé `service_role` ou `secret` dans le code ou dans une variable `NEXT_PUBLIC_*`.
 2. Pour un nouveau projet Supabase, exécutez tous les fichiers de `supabase/migrations/` dans l’ordre chronologique, puis configurez l’authentification par lien e-mail et ajoutez `http://localhost:3000/auth/callback` aux URL de redirection autorisées. Les migrations CRM/médias, index et agents vidéo sont déjà appliquées sur le projet Supabase relié à ce dépôt.
 3. Installez les dépendances avec `npm install`, puis lancez `npm run dev`. Ouvrez `http://localhost:3000` et connectez-vous avec un lien envoyé par e-mail.
 
